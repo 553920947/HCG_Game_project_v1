@@ -3,17 +3,22 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rb; //声明一个刚体组件，用于处理物理效果
-    private int _speed = 300; //定义一个整数变量，用于存储玩家的速度值
+    private int _speed = 10; //定义一个整数变量，用于存储玩家的速度值
     
     public void Start()
     {
          
     }
 
+    public void Update()
+    {
+        
+    }
+
     
     public void FixedUpdate()
     {
-        _rb.AddForce(0, 0, _speed * Time.deltaTime); //在每个固定更新帧中，向刚体施加一个沿Z轴方向的力，使玩家前进，力的大小为_speed * Time.deltaTime，确保在不同帧率下速度保持一致
+        transform.Translate(Vector3.forward * _speed * Time.fixedDeltaTime); //使玩家沿着Z轴正方向移动，移动的距离为_speed * Time.fixedDeltaTime
 
         if (Input.GetKey(KeyCode.A))
         {
@@ -29,11 +34,11 @@ public class Player : MonoBehaviour
 
     private void GoLeft()
     {
-        _rb.AddForce(-_speed * Time.deltaTime, 0, 0); //向刚体施加一个沿X轴负方向的力，使玩家向左移动，力的大小为_speed * Time.deltaTime
+        transform.Translate(Vector3.left * _speed * Time.fixedDeltaTime); //使玩家沿着X轴负方向移动，移动的距离为_speed * Time.fixedDeltaTime
     }
 
     private void GoRight()
     {
-        _rb.AddForce(_speed * Time.deltaTime, 0, 0); //向刚体施加一个沿X轴正方向的力，使玩家向右移动，力的大小为_speed * Time.deltaTime
+        transform.Translate(Vector3.right * _speed * Time.fixedDeltaTime); //使玩家沿着X轴正方向移动，移动的距离为_speed * Time.fixedDeltaTime
     }   
 }
