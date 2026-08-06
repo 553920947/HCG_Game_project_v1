@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
          
     }
 
-    public void Update()
+    public void Update() // 定义一个Update方法，用于处理玩家的移动
     {
         
     }
@@ -41,5 +41,11 @@ public class Player : MonoBehaviour
     private void GoRight()
     {
         transform.Translate(Vector3.right * _speedSide * Time.fixedDeltaTime); //使玩家沿着X轴正方向移动，移动的距离为_speedSide * Time.fixedDeltaTime
+    }
+
+    private void OnTriggerEnter(Collider other) // 引用OnTriggerEnter方法，用于处理玩家与其他对象的碰撞事件
+    {
+        Gate_Result number = other.GetComponent<Gate_Result>();  //获取与其他对象碰撞的Gate_Result组件
+        Debug.Log(number.NumberOfPlayers);
     }   
 }
