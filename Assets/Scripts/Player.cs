@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
          
     }
 
-    public void Update() // 定义一个Update方法，用于处理玩家的移动
+    public void Update() // 定义一个Update方法，用于处理玩家的移动1
     {
         
     }
