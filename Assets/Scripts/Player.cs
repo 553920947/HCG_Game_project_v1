@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     
     public void Start()
     {
-         
+        
     }
 
     public void Update() // 定义一个Update方法，用于处理玩家的移动1
@@ -46,6 +46,6 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter(Collider other) // 引用OnTriggerEnter方法，用于处理玩家与其他对象的碰撞事件
     {
         Gate_Result number = other.GetComponent<Gate_Result>();  //获取与其他对象碰撞的Gate_Result组件
-        Debug.Log(number.NumberOfPlayers);
+        Debug.Log("玩家数量：" + number.NumberOfPlayers); //输出玩家数量
     }   
 }

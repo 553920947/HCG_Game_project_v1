@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67ec820039d4922468a51f554a94cf2a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67ec820039d4922468a51f554a94cf2a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -38,15 +38,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67ec820039d4922468a51f554a94cf2a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67ec820039d4922468a51f554a94cf2a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67ec820039d4922468a51f554a94cf2a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67ec820039d4922468a51f554a94cf2a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -60,9 +60,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8341153815392554948, guid: 67ec820039d4922468a51f554a94cf2a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9c671719748d7354d82eb8c1527de5c3, type: 2}
     - target: {fileID: 919132149155446097, guid: 67ec820039d4922468a51f554a94cf2a, type: 3}
       propertyPath: m_Name
-      value: pannar_Run47
+      value: Player_Model
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 67ec820039d4922468a51f554a94cf2a, type: 3}
       propertyPath: m_Avatar
