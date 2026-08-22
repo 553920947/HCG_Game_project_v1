@@ -3,6 +3,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rb; //声明一个刚体组件，用于处理物理效果
+    [SerializeField] private SpawnGroup _spawnGroup;
     private int _speedForward = 10; //定义一个整数变量，用于存储玩家的速度值
     private int _speedSide = 5; 
     
@@ -47,5 +48,10 @@ public class Player : MonoBehaviour
     {
         Gate_Result number = other.GetComponent<Gate_Result>();  //获取与其他对象碰撞的Gate_Result组件
         Debug.Log("玩家数量：" + number.NumberOfPlayers); //输出玩家数量
+        if (_spawnGroup != null)
+        {
+            _spawnGroup.CreateNewPlayer();
+        }
+        
     }   
 }
