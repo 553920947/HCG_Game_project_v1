@@ -7,7 +7,7 @@ public class SpawnGroup : MonoBehaviour
     [SerializeField] private GameObject _prefabPlayer; 
 
     private int _maxPerRow = 3; // 最大玩家数量3
-    private float _XSpasing = 2f;
+    private float _XSpacing = 2f;
     private float _ZSpacing = 2f;
     private List<GameObject> _allPlayers = new List<GameObject>(); 
 
@@ -31,7 +31,18 @@ public class SpawnGroup : MonoBehaviour
             int row = i / _maxPerRow;
             int col = i % _maxPerRow;
 
-            float xOffset = col * _XSpasing;
+            float direction; // 方向    
+
+            if (col % 2 == 0)
+            {
+                direction = 1f; // 偶数列向右
+            }
+            else
+            {
+                direction = -1f; // 奇数列向左
+            }
+
+            float xOffset = (Mathf.CeilToInt(col / 2f)) * _XSpacing * direction;
 
             Vector3 newPos = transform.position + new Vector3(xOffset, transform.position.y, -row * _ZSpacing);
 
