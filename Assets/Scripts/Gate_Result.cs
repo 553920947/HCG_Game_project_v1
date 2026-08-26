@@ -2,5 +2,6 @@ using UnityEngine;
 
 public class Gate_Result : MonoBehaviour
 {
-    public int NumberOfPlayers; //声明一个整数变量，用于存储玩家的数量10
+    [Tooltip("门生成玩家数量")]
+    public int NumberOfPlayers; //存储门需要新增的玩家数量
 }
