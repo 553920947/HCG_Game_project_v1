@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] private SpawnGroup _spawnGroup;
     [SerializeField] private Transform _bulletSpawnPistol; //声明一个变换组件，用于存储子弹的生成位置 
     [SerializeField] private GameObject _bulletPrefab; //声明一个游戏对象，用于存储子弹的预制体
-    private int _speedForward = 10; //定义一个整数变量，用于存储玩家的速度值
+    private int _speedForward = 5; //定义一个整数变量，用于存储玩家的速度值
     private int _speedSide = 5; 
     
     public void Start()
