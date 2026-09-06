@@ -1,43 +1,22 @@
 ---
-id: e11d407f-c342-45b0-acef-75a068e22219
-title: 'Git co-change pattern: .refact/buddy/chats/workflows/buddy_pr_issue_matchmaker.json + .refact/buddy/state.json'
-tags:
-- cochange
-- git
-- pattern
-created: 2026-09-01
-updated: 2026-09-01
-filenames:
-- .refact/buddy/chats/workflows/buddy_pr_issue_matchmaker.json
-- .refact/buddy/state.json
-links: []
+id: "e11d407f-c342-45b0-acef-75a068e22219"
+title: "Git co-change pattern: .refact/buddy/chats/workflows/buddy_pr_issue_matchmaker.json + .refact/buddy/state.json"
 kind: pattern
+created: 2026-09-01
+updated: 2026-09-04
+review_after: 2026-09-04
 status: proposed
-superseded_by: null
-deprecated_at: null
-review_after: 2026-09-01
-source_chat_id: null
-created_at: 2026-09-01T09:53:09.879279200+00:00
-summary: null
-description: null
-entities: []
-related_files: []
-related_entities: []
-content_hash: 15231a704a433eb6e56b19edd0666ab86b658259f2dfd335d0aaed1223527448
-source_tool: buddy_memory_lifecycle:git
-source_confidence: 0.7799999713897705
-source_trajectory_id: null
-source_message_range: null
-source_commit: 503b3f84dbaf
-topic: null
-last_used_at: null
-use_count: 0
-last_injected_at: null
-dismissed_count: 0
-source_content_hash: 15231a704a433eb6e56b19edd0666ab86b658259f2dfd335d0aaed1223527448
+tags: ["cochange", "git", "pattern"]
+filenames: [".refact/buddy/chats/workflows/buddy_pr_issue_matchmaker.json", ".refact/buddy/state.json"]
+created_at: "2026-09-01T09:53:09.879279200+00:00"
+content_hash: "15231a704a433eb6e56b19edd0666ab86b658259f2dfd335d0aaed1223527448"
+source_tool: "buddy_memory_lifecycle:git"
+source_confidence: 0.780
+source_commit: "503b3f84dbaf"
+source_content_hash: "15231a704a433eb6e56b19edd0666ab86b658259f2dfd335d0aaed1223527448"
 review_needed: true
-occurrences: 3
-last_observed: 2026-09-01T09:53:09.937906400+00:00
+occurrences: 4
+last_observed: "2026-09-04T10:25:24.809569100+00:00"
 ---
 
 Git co-change pattern: .refact/buddy/chats/workflows/buddy_pr_issue_matchmaker.json + .refact/buddy/state.json

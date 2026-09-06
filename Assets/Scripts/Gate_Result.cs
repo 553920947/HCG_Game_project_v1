@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Gate_Result : MonoBehaviour
 {
-    [Tooltip("门生成玩家数量")]
-    public int NumberOfPlayers; //存储门需要新增的玩家数量
+    [Tooltip("门变化数量：+2生成2人，‑2删除2人")]
+    public int NumberOfPlayers;
 }
+
