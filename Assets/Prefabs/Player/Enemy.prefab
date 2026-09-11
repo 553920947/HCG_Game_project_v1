@@ -47,6 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d75380f8ea4b14149ac36391e615fc30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 688607427759296979}
+  _bulletSpawnPistol: {fileID: 2452601991799127195}
+  _bulletPrefab: {fileID: 2346274813847651173, guid: 023c6eca5ba564f4eb784ac2f2984782, type: 3}
 --- !u!136 &3865571542609090340
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -161,11 +164,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss_Capybara_01
       objectReference: {fileID: 0}
+    - target: {fileID: 6317459092850191778, guid: 7aea7bc129c31c8468e9247e8974ebf8, type: 3}
+      propertyPath: m_WarningMessage
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7aea7bc129c31c8468e9247e8974ebf8, type: 3}
+--- !u!95 &688607427759296979 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6317459092850191778, guid: 7aea7bc129c31c8468e9247e8974ebf8, type: 3}
+  m_PrefabInstance: {fileID: 6783110829780532337}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2452601991799127195 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8947271301613371626, guid: 7aea7bc129c31c8468e9247e8974ebf8, type: 3}
+  m_PrefabInstance: {fileID: 6783110829780532337}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6876504162062044073 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 93506069570549720, guid: 7aea7bc129c31c8468e9247e8974ebf8, type: 3}
