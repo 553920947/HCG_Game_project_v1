@@ -40,9 +40,12 @@ public class Enemy : MonoBehaviour
     {
         yield return new WaitForSeconds(1); // 敌人生成子弹的间隔时间
         // 修复：子弹沿敌人自身朝向（前进方向）发射，飞向玩家
-        GameObject bullet = Instantiate(_bulletPrefab, _bulletSpawnPistol.position, transform.rotation); // 敌人生成子弹的位置和旋转角度
-        Destroy(bullet, 5); // 子弹存在时间
-        StartCoroutine(nameof(BulletSpawn)); // 递归调用生成子弹
+        if (!_isDead)
+        {
+            GameObject bullet = Instantiate(_bulletPrefab, _bulletSpawnPistol.position, transform.rotation); // 敌人生成子弹的位置和旋转角度
+            Destroy(bullet, 5); // 子弹存在时间
+            StartCoroutine(nameof(BulletSpawn)); // 递归调用生成子弹
+        }
     }
 }
 

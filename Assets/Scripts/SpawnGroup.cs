@@ -17,11 +17,21 @@ public class SpawnGroup : MonoBehaviour
         UpdatePosition();
     }
 
-    public void CreateNewPlayer()
+    public void CreateNewPlayer(int number)
     {
-        GameObject newPlayer = Instantiate(_prefabPlayer, transform.position, Quaternion.identity);
-        _allPlayers.Add(newPlayer);
-        UpdatePosition();
+        for (int i = 0; i < number; i++)
+        {
+            GameObject newPlayer = Instantiate(_prefabPlayer, transform.position, Quaternion.identity);
+            // 移除克隆玩家自带的AudioListener，避免场景出现多个音频监听器导致控制台刷警告并拖慢性能
+            AudioListener listener = newPlayer.GetComponentInChildren<AudioListener>();
+            if (listener != null)
+            {
+                Destroy(listener);
+            }
+            _allPlayers.Add(newPlayer);
+            UpdatePosition();
+        }
+        
     }
 
     private void UpdatePosition()
@@ -51,6 +61,76 @@ public class SpawnGroup : MonoBehaviour
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// using UnityEngine; // 引用组件
+// using NUnit.Framework;
+// using System.Collections.Generic;
+
+// public class SpawnGroup : MonoBehaviour
+// {
+//     [SerializeField] private GameObject _prefabPlayer; 
+
+//     private int _maxPerRow = 3; // 最大玩家数量3
+//     private float _XSpacing = 2f;
+//     private float _ZSpacing = 2f;
+//     private List<GameObject> _allPlayers = new List<GameObject>(); 
+
+//     private void Start()
+//     {
+//         _allPlayers.Add(gameObject);
+//         UpdatePosition();
+//     }
+
+//     public void CreateNewPlayer(int number)
+//     {
+//         for (int i = 0; i < number; i++)
+//         {
+//             GameObject newPlayer = Instantiate(_prefabPlayer, transform.position, Quaternion.identity);
+//             _allPlayers.Add(newPlayer);
+//             UpdatePosition();
+//         }
+        
+//     }
+
+//     private void UpdatePosition()
+//     {
+//         for(int i = 0; i < _allPlayers.Count; i++)
+//         {
+//             int row = i / _maxPerRow;
+//             int col = i % _maxPerRow;
+
+//             float direction; // 方向    
+
+//             if (col % 2 == 0)
+//             {
+//                 direction = 1f; // 偶数列向右
+//             }
+//             else
+//             {
+//                 direction = -1f; // 奇数列向左
+//             }
+
+//             float xOffset = (Mathf.CeilToInt(col / 2f)) * _XSpacing * direction;
+
+//             Vector3 newPos = transform.position + new Vector3(xOffset, transform.position.y, -row * _ZSpacing);
+
+//             _allPlayers[i].transform.position = newPos;
+//         }
+
+//     }
+// }
 
 
 

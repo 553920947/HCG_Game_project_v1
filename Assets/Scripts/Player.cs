@@ -15,7 +15,17 @@ public class Player : MonoBehaviour
         StartCoroutine(nameof(BulletSpawn));
     }
 
-    public void Update() 
+    public void AddClone(int number)
+    {
+        // Debug.Log("玩家数量：" + number.NumberOfPlayers); //输出玩家数量
+        if (_spawnGroup != null)
+        {
+            _spawnGroup.CreateNewPlayer(number);
+        }
+        
+    }
+
+    public void WeaponToEquip(WeaponData weapon)
     {
         
     }
@@ -47,16 +57,12 @@ public class Player : MonoBehaviour
         transform.Translate(Vector3.right * _speedSide * Time.fixedDeltaTime); //使玩家沿着X轴正方向移动，移动的距离为_speedSide * Time.fixedDeltaTime
     }
 
-    private void OnTriggerEnter(Collider other) // 引用OnTriggerEnter方法，用于处理玩家与其他对象的碰撞事件
-    {
-        Gate_Result number = other.GetComponent<Gate_Result>();  //获取与其他对象碰撞的Gate_Result组件
-        Debug.Log("玩家数量：" + number.NumberOfPlayers); //输出玩家数量
-        if (_spawnGroup != null)
-        {
-            _spawnGroup.CreateNewPlayer();
-        }
-        
-    }   
+    // private void OnTriggerEnter(Collider other)
+    // {
+    //     Gate_Result number = other.GetComponent<Gate_Result>();
+    // }
+
+     
 
     private IEnumerator BulletSpawn()
     {
