@@ -17,8 +17,8 @@ public class Gate_Result : MonoBehaviour
             return;
         }
 
-        Player player = other.GetComponent<Player>();
-        if (player == null)
+        Player player = other.GetComponent<Player>(); // 获取玩家组件
+        if (player == null) // 防御：确保玩家组件存在
         {
             return;
         }
@@ -37,6 +37,7 @@ public class Gate_Result : MonoBehaviour
                 break;
             case GateEffectType.ChangWeapon:
                 player.WeaponToEquip(_gateData.WeaponToEquip);
+                GameManager.UploadWeapon();
                 break;
         }
     }

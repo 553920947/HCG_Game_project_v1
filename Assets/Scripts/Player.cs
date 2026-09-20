@@ -1,5 +1,7 @@
 using System.Collections;
+using System.Collections.Generic; //导入System.Collections.Generic命名空间，用于使用泛型集合
 using UnityEngine;
+using NUnit.Framework; //导入NUnit.Framework命名空间，用于编写单元测试
 
 public class Player : MonoBehaviour
 {
@@ -7,12 +9,28 @@ public class Player : MonoBehaviour
     [SerializeField] private SpawnGroup _spawnGroup;
     [SerializeField] private Transform _bulletSpawnPistol; //声明一个变换组件，用于存储子弹的生成位置 
     [SerializeField] private GameObject _bulletPrefab; //声明一个游戏对象，用于存储子弹的预制体
-    private int _speedForward = 5; //定义一个整数变量，用于存储玩家的速度值
+
+    [SerializeField] private List<WeaponData> _availableWeapons; // 声明一个列表，用于存储可用的武器数据
+    [SerializeField] private Transform _gunPosition; // 声明一个变换组件，用于存储枪的位置
+
+    private GameObject _activeWeaponInstance; // 声明一个游戏对象，用于存储当前激活的武器实例
+
+    private int _speedForward = 10; //定义一个整数变量，用于存储玩家的速度值
     private int _speedSide = 5; 
     
     public void Start()
     {
         StartCoroutine(nameof(BulletSpawn));
+        if (GameManager.CurrentWeaponData == null)
+        {
+            WeaponToEquip(_availableWeapons[0]);
+        }
+        else
+        {
+            WeaponToEquip(GameManager.CurrentWeaponData);
+        }
+
+        GameManager.OnWeaponChanged += WeaponToEquip;
     }
 
     public void AddClone(int number)
@@ -23,11 +41,18 @@ public class Player : MonoBehaviour
             _spawnGroup.CreateNewPlayer(number);
         }
         
+        
     }
 
     public void WeaponToEquip(WeaponData weapon)
     {
-        
+        if (_activeWeaponInstance != null)
+        {
+            Destroy(_activeWeaponInstance); // 销毁当前激活的武器实例
+        }
+        GameManager.CurrentWeaponData = weapon;
+
+        _activeWeaponInstance = Instantiate(weapon.WeaponPrefab, _gunPosition); // 在枪的位置生成新的武器实例
     }
 
     
